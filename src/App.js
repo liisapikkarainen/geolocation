@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Weather from './components/Weather';
 
 function App() {
   const [lat, setLat] = useState(0);
@@ -25,8 +26,9 @@ function App() {
   } else {
     return (
       <div>
-        <p>Sijainti: {lat.toFixed(3)},{lng.toFixed(3)}
-        </p>
+        <h3>Your position is</h3>
+        <p>Position: {lat.toFixed(3)}, {lng.toFixed(3)}</p>
+        <Weather lat={lat} lon={lng}/>
       </div>
     );
   }
